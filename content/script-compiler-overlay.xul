@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script type="application/x-javascript" src="chrome://googlepedia/content/xmlhttprequester.js"></script>
+  <script type="application/x-javascript" src="chrome://googlepedia/content/prefman.js"></script>
+  <script type="application/x-javascript" src="chrome://googlepedia/content/script-compiler.js"></script>
+  <script type="application/x-javascript" src="chrome://googlepedia/content/first-run.js"></script>
+ 	<stringbundleset id="stringbundleset">
+   	<stringbundle id="string-bundle-googlepedia" src="chrome://googlepedia/locale/googlepedia.properties"/>
+ 	</stringbundleset>
+</overlay>

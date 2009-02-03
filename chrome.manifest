@@ -1,0 +1,11 @@
+content	googlepedia	content/
+overlay	chrome://browser/content/browser.xul	chrome://googlepedia/content/script-compiler-overlay.xul
+locale googlepedia en-US locale/en-US/
+locale googlepedia de-DE locale/de-DE/
+locale googlepedia pt-BR locale/pt-BR/
+locale googlepedia cs locale/cs/
+locale googlepedia ja locale/ja/
+locale googlepedia nl locale/nl/
+locale googlepedia pl locale/pl/
+locale googlepedia zh-CN locale/zh-CN/
+locale googlepedia uk locale/uk/

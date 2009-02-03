@@ -1,0 +1,7 @@
+*.svn*
+*.DS_Store*
+exclude.lst
+build.sh
+*.xpi
+.settings
+.project

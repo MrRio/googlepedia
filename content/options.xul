@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+ 
+<!DOCTYPE window SYSTEM "chrome://googlepedia/locale/options.dtd">
+
+<prefwindow id="googlepedia-prefs"
+     title="&options_window_title;"
+     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" 
+     style="padding: 10px" 
+     dlgbuttons="accept,cancel" 
+     closebuttonaccesskey="C" 
+     xhtml2="http://www.w3.org/TR/xhtml2" 
+     wairole="http://www.w3.org/2005/01/wai-rdf/GUIRoleTaxonomy#" 
+     role="wairole:dialog" 
+     defaultButton="accept" 
+     type="prefwindow">
+ 
+<prefpane id="googlepedia-preferences-pane" label="&options_window_title;">
+  <preferences>
+    <preference id="pref_rewrite_links" name="googlepedia.rewrite_links" type="bool"/>
+    <preference id="pref_language" name="googlepedia.language" type="string"/>
+  </preferences>
+ 
+  <hbox align="center">
+    <checkbox preference="pref_rewrite_links" id="rewrite_links" label="&options_rewrite_links;" />
+  </hbox>
+  <hbox align="center" style="padding-bottom: 10px;">	
+    <label control="wikipediaLanguage" accesskey="L">Wikipedia Language:</label>  
+	<menulist id="wikipediaLanguage" sizetopopup="pref" preference="pref_language">
+		<menupopup>
+			<menuitem label="Default (based on Google language)" value=""/>
+			<menuitem label="English" value="en"/>
+			<menuitem label="Deutsch" value="de"/>
+			<menuitem label="Français" value="fr"/>
+			<menuitem label="Polski" value="pl" />
+			<menuitem label="日本語" value="ja" />
+			<menuitem label="Italiano" value="it"/>
+			<menuitem label="Nederlands" value="nl"/>
+			<menuitem label="Português" value="pt"/>
+			<menuitem label="Español" value="es"/>
+			<menuitem label="Русский" value="ru"/>
+			<menuitem label="Svenska" value="sv"/>
+			<menuitem label="中文" value="zh"/>
+			<menuitem label="Norsk (Bokmål)" value="no"/>
+			<menuitem label="Suomi" value="fi"/>
+			<menuitem label="Català" value="ca"/>
+			<menuitem label="Volapük" value="vo"/>
+			<menuitem label="Українська" value="uk"/>
+			<menuitem label="Română" value="ro"/>
+			<menuitem label="Türkçe" value="tr"/>
+			<menuitem label="Esperanto" value="eo"/>
+			<menuitem label="Čeština" value="cs"/>
+			<menuitem label="Magyar" value="hu"/>
+			<menuitem label="Slovenčina" value="sk" />
+			<menuitem label="Dansk" value="da" />
+		</menupopup>
+	</menulist>
+  </hbox>
+</prefpane>
+ 
+
+</prefwindow>

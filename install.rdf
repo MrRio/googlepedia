@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+	<Description about="urn:mozilla:install-manifest">
+		<em:id>{1ABADB6E-DC4B-11DA-9F70-791A9CD9513E}</em:id>
+		<em:name>Googlepedia</em:name>
+		<em:version>0.5.6</em:version>
+		<em:description>Shows you a relevant wikipedia article along with your search results.</em:description>
+		<em:creator>James Hall</em:creator>
+		<em:translator>Armin C. Schneider</em:translator>
+		<em:translator>Tony Ye</em:translator>
+		<em:translator>Stefan Plewako</em:translator>
+		<em:translator>Rodrigo Sampaio Silveira</em:translator>
+		<em:translator>Cutout Translations, Japanese Translators, http://www.cutouttranslations.com</em:translator>
+		<em:translator>Jiří Vávrů</em:translator>
+		<em:translator>Joost van Schie</em:translator>
+		<em:translator>Sebastian Støttrup</em:translator>
+		<em:translator>Joakim Jacobsson</em:translator>
+		<em:contributor>Thomas Tague</em:contributor>	
+		<em:contributor>Eric Eisack</em:contributor>
+		<em:contributor>Eric Eisack</em:contributor>
+		<em:contributor>Henry Rouhivuori</em:contributor>
+		<em:homepageURL>http://code.google.com/p/googlepedia/</em:homepageURL>
+		<em:targetApplication>
+			<Description>
+				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+				<em:minVersion>1.5</em:minVersion>
+				<em:maxVersion>3.1b2</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+		<em:optionsURL>chrome://googlepedia/content/options.xul</em:optionsURL>
+	</Description>
+</RDF>
