@@ -28,7 +28,7 @@ var Overlay = {
         // The example below loads a page by opening a new tab.
         // Useful for loading a mini tutorial
         window.setTimeout(function(){
-          gBrowser.selectedTab = gBrowser.addTab("http://googlepedia.googlecode.com/svn/pages/first-run.html");
+          gBrowser.selectedTab = gBrowser.addTab("http://snapshotmedia.co.uk/portfolio/googlepedia");
         }, 1500); //Firefox 2 fix - or else tab will get closed
 				
       }		
@@ -37,7 +37,7 @@ var Overlay = {
         Prefs.setCharPref("version",current);
         
         window.setTimeout(function(){
-          gBrowser.selectedTab = gBrowser.addTab("http://googlepedia.googlecode.com/svn/pages/updated.html");
+          gBrowser.selectedTab = gBrowser.addTab("http://snapshotmedia.co.uk/portfolio/googlepedia");
         }, 1500); //Firefox 2 fix - or else tab will get closed
 					
         // Insert code if version is different here => upgrade

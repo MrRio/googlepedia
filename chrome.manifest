@@ -9,3 +9,8 @@ locale googlepedia nl locale/nl/
 locale googlepedia pl locale/pl/
 locale googlepedia zh-CN locale/zh-CN/
 locale googlepedia uk locale/uk/
+locale googlepedia sr locale/sr/
+locale googlepedia da locale/da/
+locale googlepedia fr locale/fr/
+locale googlepedia sv-SE locale/sv-SE/
+locale googlepedia ru locale/ru/

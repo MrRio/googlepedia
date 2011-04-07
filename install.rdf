@@ -3,7 +3,7 @@
 	<Description about="urn:mozilla:install-manifest">
 		<em:id>{1ABADB6E-DC4B-11DA-9F70-791A9CD9513E}</em:id>
 		<em:name>Googlepedia</em:name>
-		<em:version>0.5.6</em:version>
+		<em:version>0.6.3</em:version>
 		<em:description>Shows you a relevant wikipedia article along with your search results.</em:description>
 		<em:creator>James Hall</em:creator>
 		<em:translator>Armin C. Schneider</em:translator>
@@ -15,16 +15,18 @@
 		<em:translator>Joost van Schie</em:translator>
 		<em:translator>Sebastian Støttrup</em:translator>
 		<em:translator>Joakim Jacobsson</em:translator>
+		<em:translator>David Beal</em:translator>		
 		<em:contributor>Thomas Tague</em:contributor>	
 		<em:contributor>Eric Eisack</em:contributor>
-		<em:contributor>Eric Eisack</em:contributor>
+		<em:contributor>Kursten Dubbels</em:contributor>
 		<em:contributor>Henry Rouhivuori</em:contributor>
+		<em:contributor>Timur Timirkhanov</em:contributor>
 		<em:homepageURL>http://code.google.com/p/googlepedia/</em:homepageURL>
 		<em:targetApplication>
 			<Description>
 				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
 				<em:minVersion>1.5</em:minVersion>
-				<em:maxVersion>3.1b2</em:maxVersion>
+				<em:maxVersion>4.0b2pre</em:maxVersion>
 			</Description>
 		</em:targetApplication>
 		<em:optionsURL>chrome://googlepedia/content/options.xul</em:optionsURL>

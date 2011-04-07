@@ -1,6 +1,6 @@
 // Googlepedia
 // 
-// Copyright (c) 2006-2008, James Hall
+// Copyright (c) 2006-2009, James Hall
 // Feel free to share, modify, sell etc...
 
 var googleUrl = window.location.href.match(/http:\/\/(.*?)\//);
@@ -70,13 +70,13 @@ function getQueryVariable(variable) {
 
 (function () {
 	// Thanks to Max Kueng (http://maxkueng.com/) for this next bit
-	var f = document.getElementsByTagName('font');
+	/*var f = document.getElementsByTagName('font');
 	for (var i=0;i<f.length;i++) {
 		if (f[i].className == 'a') {
 			t = f[i].parentNode.parentNode.parentNode.parentNode.parentNode;
 			t.style.display = 'none';
 		}
-	}
+	}*/
 	
 	// New top Adword removal code
 	// Uses color to make it MUCH less likely a dom change will remove the
@@ -96,11 +96,11 @@ function getQueryVariable(variable) {
 	if(mbEnd != undefined) {
 		mbEnd.style.display = 'none';
 	}
-	
+	/*
 	var tads = document.getElementById('tads');
 	if(tads != undefined) {
 		tads.style.display = 'none';
-	}	
+	}*/	
 	
 }());
 
@@ -200,7 +200,13 @@ function retrieveURL(url) {
 					realImage = realImage.replace(/\/[^\/.]+$/, '');
 					var imageSplit = realImage.split('/');
 					realImage = realImage.replace('/' + imageSplit[imageSplit.length - 1], '');
-					thisElement.parentNode.href = realImage;
+					// That can be written nicer surely ;)
+					if (realImage.indexOf('.jpg') != -1 || realImage.indexOf('.png') != -1 || realImage.indexOf('.gif') != -1 || realImage.indexOf('.svg') != -1) {
+						thisElement.parentNode.href = realImage;
+					} else {
+						thisElement.parentNode.href = thisElement.src;
+					}
+					
 				}
 				 
 			}					
@@ -210,7 +216,7 @@ function retrieveURL(url) {
 }
 
 
-addGlobalStyle('#wikibox { z-index: 999; background-color: #fff; overflow: hidden; position: relative; top: 20px;	}');
+addGlobalStyle('#wikibox { z-index: 999; background-color: #fff; overflow: hidden; position: relative; top: 20px;margin-right:11px;	}');
 addGlobalStyle('#showGooglepediaBox { z-index: 999; float: right; width: 50%; text-align: right; display:none; position: relative; top: 20px;	}');
 
 var start = getQueryVariable('start');
@@ -218,19 +224,21 @@ if(GM_getValue('hidden', '0')=='1' || (start != '' && start != '0')) {
 	addGlobalStyle('#showGooglepediaBox { display:block;font-size:13px !important}');
 }
 
-addGlobalStyle('#hideLink { float: right; }');
+addGlobalStyle('#hideLink { float: right; }#center_col {margin-right: 0px !important}#cnt {max-width: 100000px !important; padding-bottom:20px}#brs {float: left !important; clear: left !important;}#foot {clear:left}');
 addGlobalStyle('.shrunk { float: right; width: 50%; border-left: 3px solid #efefef; padding-left: 10px; margin-left: 10px; margin-bottom: 32px; }');
 addGlobalStyle('.expanded { float: none; width: 100%; border: 0; padding: 0; border-bottom: 3px solid #efefef; padding-bottom: 10px; margin-bottom: 30px;}');
 addGlobalStyle('#throbber, #networkError { vertical-align:middle; padding-right: 10px; }');
 addGlobalStyle('#navbar { text-align: left; width: 50%;	} hr { width: 45% !important; } ');
 
+
+addGlobalStyle('#bodyContent a.external, #bodyContent a[href^="gopher://"] {-moz-background-clip:border;-moz-background-inline-policy:continuous;-moz-background-origin:padding;background:transparent url(http://en.wikipedia.org/skins-1.5/monobook/external.png) no-repeat scroll right center;padding-right:13px;}');
 // Wikipedia CSS
 //addGlobalStyle('.infobox{float:right;}#jump-to-nav{display:none;}#bc table,#bc td,#bc div,#bc nobr,#bc font,#bc input,#bc a{font-family:Arial, Helvetica, sans-serif !important;font-size:12px;font-weight:400;color:#000;cursor:default;line-height:1.6em;}#bc a{cursor:pointer;color:#003FBF !important;text-decoration:none;}#bc a:hover{text-decoration:underline;}#bc h1.firstHeading{font-size:260%;font-family:Arial, Helvetica, sans-serif;color:#000;margin:10px 0 2px;}#bc h3#siteSub{font-size:130%;color:#CCC;margin:0 0 20px;}#bc h1{font-size:200%;}#bc h4{font-size:150%;margin-bottom:0;#bch4a font-size:100%;}#bc .navcontent{display:block;}#bc #catlinks{border-top:1px solid #DDE5F9;border-left:1px solid #DDE5F9;border-right:1px solid #BCC2D0;border-bottom:1px solid #BCC2D0;background:url(../pix/mediabg.png) #FFF repeat-x top left;padding:2px 10px;}#bc #catlinks p{margin:0;}#toc{border:1px solid #DBDFE6;background-color:#F0F2F5;}#toctitle h2{font-size:140%;padding-left:10px;}#toctitle TD{padding-top:16px;}#tocinside TD{padding:10px 20px 20px;}div.thumb{border:1px solid #CCC;background-color:#F9F9F9;width:auto;margin:20px;padding:4px;}div.tright{clear:right;float:right;}.internal IMG{border:1px solid #CCC;}.thumbcaption{padding:6px 4px 4px;}.tocline{font-size:12pt;}.tocindent{padding-left:20px;}.toctext{padding-left:7px;}img,#bc a img{border:0;}#bc h2,#bc h2 a{font-size:150%;}');
 //addGlobalStyle('#bc table,#bc td,#bc div,#bc nobr,#bc font,#bc input,#bc a{font-family:Arial, Helvetica, sans-serif !important;font-size:10px;}IMG{border:1px solid #CCC;}.thumbcaption{padding:6px 4px 4px;}.tocline{font-size:12pt;}.tocindent{padding-left:20px;}.toctext{padding-left:7px;}img,#bc a img{border:0;}#bc h2,#bc h2 a{font-size:150%;}');
 
 // Styles lovingly handpicked from the wikipedia site then compressed. Some heavy tweaking in places
 addGlobalStyle('h1.firstHeading{clear:both;}#wikibox img{border:0 !important}#wikibox,#wikibox ul{font-size:13px !important}.infobox{ border:1px solid #aaa; background-color:#f9f9f9; color:black; margin-bottom:0.5em; margin-left:1em; padding:0.2em; float:right; clear:right}.infobox td,.infobox th{ vertical-align:top}.infobox caption{ font-size:larger; margin-left:inherit}.infobox.bordered{ border-collapse:collapse}.infobox.bordered td,.infobox.bordered th{ border:1px solid #aaa}.infobox.bordered .borderless td,.infobox.bordered .borderless th{ border:0}.infobox.sisterproject{ width:20em; font-size:90%}.infobox.bordered .mergedtoprow td,.infobox.bordered .mergedtoprow th{ border:0; border-top:1px solid #aaa; border-right:1px solid #aaa}.infobox.bordered .mergedrow td,.infobox.bordered .mergedrow th{ border:0; border-right:1px solid #aaa}.infobox.geography{ border:1px solid #ccd2d9; text-align:left; border-collapse:collapse; line-height:1.2em; font-size:90%}.infobox.geography td,.infobox.geography th{ border-top:solid 1px #ccd2d9; padding:0.4em 0.2em 0.4em 0.8em}.infobox.geography .mergedtoprow td,.infobox.geography .mergedtoprow th{ border-top:solid 1px #ccd2d9; padding:0.4em 0.2em 0.2em 0.8em}.infobox.geography .mergedrow td,.infobox.geography .mergedrow th{ border:0; padding:0 0.2em 0.2em 0.8em}.infobox.geography .mergedbottomrow td,.infobox.geography .mergedbottomrow th{ border-top:0; border-bottom:solid 1px #ccd2d9; padding:0 0.2em 0.4em 0.8em}.infobox.geography .maptable td,.infobox.geography .maptable th{ border:0; padding:0 0 0 0}#toc a{text-decoration:none}#toc,.toc,.mw-warning{border:1px solid #aaa;background-color:#f9f9f9;padding:5px;font-size:95%}#toc h2,.toc h2{display:inline;border:none;padding:0;font-size:100%;font-weight:bold}#toc #toctitle,.toc #toctitle,#toc .toctitle,.toc .toctitle{text-align:center}#toc ul,.toc ul{list-style-type:none;list-style-image:none;margin-left:0;padding-left:0;text-align:left}#toc ul ul,.toc ul ul{margin:0 0 0 2em}#toc .toctoggle,.toc .toctoggle{font-size:94%}div.thumb{margin-bottom:.5em;border-style:solid;border-color:white;width:auto}div.thumb div{border:1px solid #ccc;padding:3px !important;background-color:#f9f9f9;font-size:94%;text-align:center;overflow:hidden}div.thumb div a img{border:1px solid #ccc}div.thumb div div.thumbcaption{border:none;text-align:left;line-height:1.4em;padding:.3em 0 .1em 0}div.magnify{float:right;border:none !important;background:none !important}div.magnify a,div.magnify img{display:block;border:none !important;background:none !important}div.tright{clear:right;float:right;border-width:.5em 0 .8em 1.4em;font-size:13px;text-decoration:none}div.tleft{float:left;margin-right:.5em;border-width:.5em 1.4em .8em 0}.hiddenStructure{display:none;speak:none}img.tex{vertical-align:middle}span.texhtml{font-family:serif}img{border:none;vertical-align:middle}p{margin:.4em 0 .5em 0;line-height:1.5em}p img{margin:0}hr{height:1px;color:#aaa;background-color:#aaa;border:0;margin:.2em 0 .2em 0}#wikibox h1,#wikibox h2,#wikibox h3,#wikibox h4,#wikibox h5,#wikibox h6{color:black;background:none;font-weight:normal;margin:0;padding-top:.5em;padding-bottom:.17em;border-bottom:1px solid #aaa}h1{font-size:188%}h2{font-size:150%}#wikibox	h3,#wikibox h4,#wikibox h5,#wikibox h6{border-bottom:none;font-weight:bold}#wikibox h3{font-size:132%}#wikibox h4{font-size:116%}#wikibox h5{font-size:100%}#wikibox h6{font-size:80%}#wikibox ul{line-height:1.5em;list-style-type:square;margin:.3em 0 0 1.5em;padding:0;list-style-image:url(bullet.gif)}#wikibox ol{line-height:1.5em;margin:.3em 0 0 3.2em;padding:0;list-style-image:none}#wikibox li{margin-bottom:.1em}#wikibox dt{font-weight:bold;margin-bottom:.1em}#wikibox dl{margin-top:.2em;margin-bottom:.5em}#wikibox dd{line-height:1.5em;margin-left:2em;margin-bottom:.1em}#wikibox #catlinks{border:1px solid #aaa;background-color:#f9f9f9;padding:5px;margin-top:1em;clear:both}#wikibox table.rimage{float:right;position:relative;margin-left:1em;margin-bottom:1em;text-align:center}#wikibox .toccolours{border:1px solid #aaa;background-color:#f9f9f9;padding:5px;font-size:95%}div.townBox{position:relative;float:right;background:white;margin-left:1em;border:1px solid gray;padding:.3em;width:200px;overflow:hidden;clear:right}div.townBox dl{padding:0;margin:0 0 .3em;font-size:96%}div.townBox dl dt{background:none;margin:.4em 0 0}div.townBox dl dd{margin:.1em 0 0 1.1em;background-color:#f3f3f3}#siteNotice div{text-align:center !important;font-size:100%}.references-small *{font-size:11px}.tright a{text-decoration:none;font-size:13px !important}#jump-to-nav{display:none}a.new,#quickbar a.new{color:#C20} #siteSub{ display:inline; font-size:92%; font-weight:normal} #siteNotice{font-size:14px !important} #siteSub{display:block;padding-top:4px;margin-bottom:15px}.editsection{display:none;}a.linkBack{font-size:0.4em;font-weight:normal;}');
-addGlobalStyle('ol.references li { list-style-type: decimal !important; }');
+addGlobalStyle('ol.references li { list-style-type: decimal !important; } h3#siteSub { display:none; }#cnt {max-width:1000em !important;}');
 
 wikibox = document.createElement('div');
 showGooglepediaBox = document.createElement('div'); 
