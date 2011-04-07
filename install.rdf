@@ -3,7 +3,7 @@
 	<Description about="urn:mozilla:install-manifest">
 		<em:id>{1ABADB6E-DC4B-11DA-9F70-791A9CD9513E}</em:id>
 		<em:name>Googlepedia</em:name>
-		<em:version>0.6.3</em:version>
+		<em:version>0.8</em:version>
 		<em:description>Shows you a relevant wikipedia article along with your search results.</em:description>
 		<em:creator>James Hall</em:creator>
 		<em:translator>Armin C. Schneider</em:translator>
@@ -26,7 +26,7 @@
 			<Description>
 				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
 				<em:minVersion>1.5</em:minVersion>
-				<em:maxVersion>4.0b2pre</em:maxVersion>
+				<em:maxVersion>4.0</em:maxVersion>
 			</Description>
 		</em:targetApplication>
 		<em:optionsURL>chrome://googlepedia/content/options.xul</em:optionsURL>
